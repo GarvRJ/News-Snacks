@@ -1,4 +1,8 @@
 from time import mktime
+
+from objects.snacks import Snack
+from processor.paraphraser import sent_paraphraser, paraphraser
+from processor.summarizer import summarizer
 from scraper.get_rss import get_links
 from newspaper import Article
 import feedparser
@@ -10,7 +14,7 @@ def latest_article_links():
     urls = get_links()
     current_time = datetime.now()
 
-    threshold = current_time - timedelta(hours=4)
+    threshold = current_time - timedelta(hours=8)
 
     print('Finding new articles in these sources...')
     links = []
@@ -34,12 +38,18 @@ def scrape_web():
     links = latest_article_links()
     print('Scraping those articles...')
     for link in links:
-        article = Article(str(link))
-        article.download()
-        article.parse()
-        article_title = article.title
-        article_text = article.text
-        article_tags = article.tags
-        article_time = article.publish_date
-        content.append(Content(article_title, link, article_text, article_tags, article_time))
+        try:
+            article = Article(str(link))
+            article.download()
+            article.parse()
+            article_title = str(sent_paraphraser(str(article.title)))
+            article_text = str(paraphraser(str(summarizer(str(article.text)))))
+            article_tags = article.tags
+            image = article.top_image
+            print(str(image))
+            article_time = article.publish_date
+            snack = Snack(name=article_title, description=article_text, link= link, time= article_time)
+            snack.add()
+        except:
+            pass
     return content

@@ -3,7 +3,6 @@ import time
 
 class Content:
     timestamp = time.time()
-    print(time.time())
 
     def __init__(self, title, link, content, tags, timestamp):
         self.title = title

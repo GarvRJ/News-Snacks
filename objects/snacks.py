@@ -5,15 +5,17 @@ from init_setup.creds import add_article, key
 
 class Snack:
     def __init__(self, name, description, time, link):
-        self.name = name
-        self.description = description
-        self.time = time
-        self.link = link
-        self.source_name = urlparse(link).hostname
+        self.name = str(name)
+        self.description = str(description)
+        self.time = str(time)
+        self.link = str(link)
+        self.source_name = str(urlparse(link).hostname)
 
     def add(self):
+        print("Uploading snacks...")
         response = requests.post(add_article, data={'key': key, 'title': self.name, 'description': self.description,
-                                                    'link': self.link, 'source_name': self.source_name})
+                                                    'link': self.link, 'source_name': self.source_name,
+                                                    'time': self.time})
         print(response.text)
 
     def print(self):
