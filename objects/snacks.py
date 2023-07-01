@@ -11,6 +11,7 @@ class Snack:
         self.link = str(link)
         self.source_name = str(urlparse(link).hostname)
         self.image_link = str(image_link)
+
     def add(self):
         print("Uploading snacks...")
         response = requests.post(add_article, data={'key': key, 'title': self.name, 'description': self.description,
@@ -22,6 +23,5 @@ class Snack:
         print("Title: \t\t\t" + self.name)
         print("Description: \t" + str(self.description))
         print("Time: \t\t\t" + str(self.time))
-        print("Image Link: \t\t\t" + str(self.image_link))
         print("Link: \t\t\t" + str(self.link))
         print("Source: \t\t\t" + str(self.source_name) + "\n")

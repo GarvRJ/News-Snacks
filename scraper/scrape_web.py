@@ -1,5 +1,6 @@
+import math
 from time import mktime
-
+import threading
 from objects.snacks import Snack
 from processor.paraphraser import sent_paraphraser, paraphraser
 from processor.summarizer import summarizer
@@ -33,11 +34,16 @@ def latest_article_links():
     return links
 
 
-def scrape_web():
-    content = []
-    links = latest_article_links()
-    print('Scraping those articles...')
-    for link in links:
+def split(list_a, chunk_size):
+    list_b = []
+    for i in range(0, len(list_a), chunk_size):
+        list_b.append(list_a[i:i + chunk_size])
+
+    return list_b
+
+
+def scrape_article(**kwargs):
+    for link in kwargs['thread_list']:
         try:
             article = Article(str(link))
             article.download()
@@ -46,10 +52,66 @@ def scrape_web():
             article_text = str(paraphraser(str(summarizer(str(article.text)))))
             article_tags = article.tags
             image = str(article.top_image)
+            print(image)
             article_time = article.publish_date
             snack = Snack(name=article_title, description=article_text, link=link, time=article_time, image_link=image)
             snack.print()
             snack.add()
         except:
             pass
-    return content
+
+
+def scrape_web():
+    content = []
+    links = latest_article_links()
+    chunk_size = math.ceil(len(links) / 16)
+    threads = split(links, chunk_size)
+    t1 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[0]})
+    t2 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[1]})
+    t3 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[2]})
+    t4 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[3]})
+    t5 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[4]})
+    t6 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[5]})
+    t7 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[6]})
+    t8 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[7]})
+    t9 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[8]})
+    t10 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[9]})
+    t11 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[10]})
+    t12 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[11]})
+    t13 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[12]})
+    t14 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[13]})
+    t15 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[14]})
+    t16 = threading.Thread(target=scrape_article, kwargs={'thread_list': threads[15]})
+    print('Scraping those articles...')
+    t1.start()
+    t2.start()
+    t3.start()
+    t4.start()
+    t5.start()
+    t6.start()
+    t7.start()
+    t8.start()
+    t9.start()
+    t10.start()
+    t11.start()
+    t12.start()
+    t13.start()
+    t14.start()
+    t15.start()
+    t16.start()
+    t1.join()
+    t2.join()
+    t3.join()
+    t4.join()
+    t5.join()
+    t6.join()
+    t7.join()
+    t8.join()
+    t9.join()
+    t10.join()
+    t11.join()
+    t12.join()
+    t13.join()
+    t14.join()
+    t15.join()
+    t16.join()
