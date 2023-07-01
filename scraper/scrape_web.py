@@ -14,7 +14,7 @@ def latest_article_links():
     urls = get_links()
     current_time = datetime.now()
 
-    threshold = current_time - timedelta(hours=8)
+    threshold = current_time - timedelta(hours=48)
 
     print('Finding new articles in these sources...')
     links = []
@@ -45,10 +45,10 @@ def scrape_web():
             article_title = str(sent_paraphraser(str(article.title)))
             article_text = str(paraphraser(str(summarizer(str(article.text)))))
             article_tags = article.tags
-            image = article.top_image
-            print(str(image))
+            image = str(article.top_image)
             article_time = article.publish_date
-            snack = Snack(name=article_title, description=article_text, link= link, time= article_time)
+            snack = Snack(name=article_title, description=article_text, link=link, time=article_time, image_link=image)
+            snack.print()
             snack.add()
         except:
             pass
