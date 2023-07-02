@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4294d60d-f254-47bd-8141-cf4982e50a36" name="Changes" comment="Added image link scraping">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/techSnacks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/techSnacks.iml" afterDir="false" />
+    <list default="true" id="4294d60d-f254-47bd-8141-cf4982e50a36" name="Changes" comment="Cleaned code, reduced imports and updated requirements.txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_setup/link_to_rss.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_setup/link_to_rss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_setup/nltk_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_setup/nltk_download.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processor/paraphraser_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/processor/paraphraser_new.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scraper/scrape_web.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/scrape_web.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,13 +127,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688217505479</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cleaned code, reduced imports and updated requirements.txt">
+      <created>1688302685891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688302685891</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Streamlining previously containerised flow of program" />
     <MESSAGE value="Using multithreading to parallely run multiple streams. * Performance evaluation in progress *" />
     <MESSAGE value="Added image link scraping" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added image link scraping" />
+    <MESSAGE value="Cleaned code, reduced imports and updated requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned code, reduced imports and updated requirements.txt" />
   </component>
 </project>
