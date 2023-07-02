@@ -47,12 +47,10 @@ dt = {}
 
 if response.status_code == 200:
     sites = []
-    # Extract the list data from the response
     sequence = response.json()
     for link in sequence:
         sites.append(link["source_link"])
 elif response.status_code == 403:
-    # Print an error message if the request failed
     print("Request failed due to invalid key:", response.status_code)
     sites = []
 else:

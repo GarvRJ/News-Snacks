@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4294d60d-f254-47bd-8141-cf4982e50a36" name="Changes" comment="Using multithreading to parallely run multiple streams. * Performance evaluation in progress *" />
+    <list default="true" id="4294d60d-f254-47bd-8141-cf4982e50a36" name="Changes" comment="Added image link scraping">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/techSnacks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/techSnacks.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_setup/link_to_rss.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_setup/link_to_rss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_setup/nltk_download.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_setup/nltk_download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processor/paraphraser_new.py" beforeDir="false" afterPath="$PROJECT_DIR$/processor/paraphraser_new.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraper/scrape_web.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraper/scrape_web.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +31,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="multithreading" />
+        <entry key="$PROJECT_DIR$" value="tinkering" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2RtA84q1bg0Lli02AfLPnmuWC0r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -34,7 +48,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="RunManager" selected="Python.main">
@@ -86,6 +102,7 @@
         <item itemvalue="Python.scrape_web" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.scrape_web" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -112,12 +129,20 @@
       <option name="project" value="LOCAL" />
       <updated>1688206338687</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added image link scraping">
+      <created>1688217505479</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688217505479</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Streamlining previously containerised flow of program" />
     <MESSAGE value="Using multithreading to parallely run multiple streams. * Performance evaluation in progress *" />
-    <option name="LAST_COMMIT_MESSAGE" value="Using multithreading to parallely run multiple streams. * Performance evaluation in progress *" />
+    <MESSAGE value="Added image link scraping" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added image link scraping" />
   </component>
 </project>

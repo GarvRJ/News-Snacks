@@ -5,10 +5,10 @@ from objects.snacks import Snack
 from processor.paraphraser import sent_paraphraser, paraphraser
 from processor.summarizer import summarizer
 from scraper.get_rss import get_links
+# noinspection PyPackageRequirements
 from newspaper import Article
 import feedparser
 from _datetime import datetime, timedelta
-from objects.content import Content
 
 
 def latest_article_links():
@@ -25,7 +25,7 @@ def latest_article_links():
             if "published_parsed" in entry:
                 published_date = datetime.fromtimestamp(mktime(entry.published_parsed))
             else:
-                pass
+                published_date = datetime.fromtimestamp(0)
             if published_date >= threshold:
                 link = entry.link
                 links.append(link)
@@ -42,6 +42,7 @@ def split(list_a, chunk_size):
     return list_b
 
 
+# noinspection PyBroadException
 def scrape_article(**kwargs):
     for link in kwargs['thread_list']:
         try:
@@ -50,7 +51,8 @@ def scrape_article(**kwargs):
             article.parse()
             article_title = str(sent_paraphraser(str(article.title)))
             article_text = str(paraphraser(str(summarizer(str(article.text)))))
-            article_tags = article.tags
+            # article_tags = article.tags
+            # TODO: Add tagging feature for articles for better SEO.
             image = str(article.top_image)
             print(image)
             article_time = article.publish_date
@@ -62,7 +64,6 @@ def scrape_article(**kwargs):
 
 
 def scrape_web():
-    content = []
     links = latest_article_links()
     chunk_size = math.ceil(len(links) / 16)
     threads = split(links, chunk_size)
